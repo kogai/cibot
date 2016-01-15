@@ -4,6 +4,8 @@
   "description": "会話形式でCicleCIにコマンドできるSlackBot",
   "main": "robot.js",
   "scripts": {
+    "start": "heroku local",
+    "debug": "NODE_ENV=debug heroku local",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
