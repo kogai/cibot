@@ -1,1 +1,1 @@
-web: node ./robot.js
+web: node ./bin/cli.js

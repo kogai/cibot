@@ -1,0 +1,27 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "mocha": true,
+    "jquery": true
+  },
+  "rules": {
+    "camelcase": 0,
+    "no-console": 0,
+    "no-alert": 0,
+    "arrow-spacing": [
+      2,
+      { "before": false, "after": true }
+    ],
+    "id-length": [
+      2,
+      {
+        "exceptions": ["_", "$", "i", "j", "k"]
+      }
+    ],
+    "react/prop-types": [
+      2, {
+        ignore: [ "children" ]
+      }
+    ]
+  }
+}
