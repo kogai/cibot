@@ -2,6 +2,7 @@ import Botkit from 'botkit';
 import CircleCI from 'circleci';
 
 import { createSelectString } from 'utils';
+import { startHttpd } from 'httpd.js';
 
 const ci = new CircleCI({ auth: process.env.CIBOT_CIRCLECI_TOKEN });
 
@@ -61,6 +62,8 @@ function rebuild(bot, msg) {
 }
 
 export function run() {
+  startHttpd();
+
   // Initialize
   const controller = Botkit.slackbot({
     debug: process.env.NODE_ENV === 'debug',
