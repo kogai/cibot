@@ -1,16 +1,13 @@
-import CircleCI from 'circleci';
-import { CI } from 'lib/CI';
-
-const ci = new CircleCI({ auth: process.env.CIBOT_CIRCLECI_TOKEN });
+import { CIHelper } from 'lib/CI';
 
 export function rebuild(bot, msg) {
-  const cibot = new CI({ bot, msg, context: this });
+  const ci = new CIHelper({ bot, msg, context: this });
 
   bot.reply(msg, ':hammer_and_wrench: OK, your projects fetching...');
-  cibot.getUserSelect()
+  ci.getUserSelect()
     .then((selected)=> {
       return new Promise((resolve)=> {
-        ci.getBuilds({
+        ci.ci.getBuilds({
           username: selected.username,
           project: selected.reponame,
           limit: 1,
@@ -21,7 +18,7 @@ export function rebuild(bot, msg) {
       });
     })
     .then(({ build })=> {
-      ci.retryBuild({
+      ci.ci.retryBuild({
         username: build.username,
         project: build.reponame,
         build_num: build.build_num,
