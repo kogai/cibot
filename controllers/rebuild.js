@@ -1,9 +1,7 @@
-import { CIHelper } from 'lib/CI';
+import { CIHelper } from 'lib/CIHelper';
 
 export function rebuild(bot, msg) {
   const ci = new CIHelper({ bot, msg, context: this });
-
-  bot.reply(msg, ':hammer_and_wrench: OK, your projects fetching...');
   ci.getUserSelect()
     .then((selected)=> {
       return new Promise((resolve)=> {
@@ -29,7 +27,7 @@ export function rebuild(bot, msg) {
       });
     })
     .catch((err)=> {
-      bot.reply(msg, `:robot_face: Rebuild is failed... check heroku logs`);
+      bot.reply(msg, ci.errorMessage);
       console.log(err);
     });
 }

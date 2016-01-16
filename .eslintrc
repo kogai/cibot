@@ -13,10 +13,7 @@
       { "before": false, "after": true }
     ],
     "id-length": [
-      2,
-      {
-        "exceptions": ["_", "$", "i", "j", "k"]
-      }
+      0
     ],
     "react/prop-types": [
       2, {
