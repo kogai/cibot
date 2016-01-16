@@ -1,6 +1,6 @@
 import Botkit from 'botkit';
 
-import { rebuild } from 'controllers/rebuild.js';
+import { rebuild, show } from 'controllers/';
 import { startHttpd } from 'lib/utils.js';
 
 export function run() {
@@ -18,4 +18,5 @@ export function run() {
 
   // Set controllers
   controller.hears('rebuild', ['direct_mention', 'mention'], rebuild);
+  controller.hears('show', ['direct_mention', 'mention'], show);
 }
