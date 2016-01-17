@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 require('babel-register');
 
 const run = require('robot.js').run;

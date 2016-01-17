@@ -1,1 +1,1 @@
-web: node ./bin/cli.js
+web: node ./bin/cibot

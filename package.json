@@ -4,7 +4,7 @@
   "description": "会話形式でCicleCIにコマンドできるSlackBot",
   "main": "robot.js",
   "scripts": {
-    "start": "node bin/cli.js",
+    "start": "node bin/cibot",
     "debug": "NODE_ENV=debug npm start",
     "deploy": "git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
