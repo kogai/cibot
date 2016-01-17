@@ -5,6 +5,7 @@ import {
   show,
   recent,
   help,
+  greeting,
 } from 'controllers/';
 
 import { startHttpd } from 'lib/httpd.js';
@@ -27,4 +28,5 @@ export function run() {
   controller.hears('show', ['direct_mention', 'mention'], show);
   controller.hears('recent', ['direct_mention', 'mention'], recent);
   controller.hears('help', ['direct_mention', 'mention'], help);
+  controller.hears('sing', ['direct_mention', 'mention'], greeting);
 }
