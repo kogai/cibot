@@ -1,10 +1,16 @@
 import Botkit from 'botkit';
 
-import { rebuild, show, recent } from 'controllers/';
+import {
+  rebuild,
+  show,
+  recent,
+  help,
+} from 'controllers/';
+
 import { startHttpd } from 'lib/utils.js';
 
 export function run() {
-  // to avoid heroku timeout
+  // To avoid heroku timeout
   startHttpd();
 
   // Initialize
@@ -20,4 +26,5 @@ export function run() {
   controller.hears('rebuild', ['direct_mention', 'mention'], rebuild);
   controller.hears('show', ['direct_mention', 'mention'], show);
   controller.hears('recent', ['direct_mention', 'mention'], recent);
+  controller.hears('help', ['direct_mention', 'mention'], help);
 }
