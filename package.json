@@ -5,7 +5,7 @@
   "main": "robot.js",
   "scripts": {
     "start": "node bin/cli.js",
-    "debug": "NODE_ENV=debug heroku local",
+    "debug": "NODE_ENV=debug npm start",
     "deploy": "git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

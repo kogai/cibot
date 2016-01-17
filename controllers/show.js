@@ -2,13 +2,16 @@ import { CIHelper } from 'lib/CIHelper';
 import { normalizeBuilds } from 'lib/utils';
 
 export function show(bot, msg) {
+  const hasLimit = /^show ([0-9]+)/.exec(msg.text);
+  const limit = hasLimit ? hasLimit[1] : 5;
+
   const ci = new CIHelper({ bot, msg, context: this });
   ci.getUserSelect()
     .then((selected)=> {
       const conditions = {
         username: selected.username,
         project: selected.reponame,
-        limit: 5,
+        limit,
       };
       ci.ci.getBuilds(conditions)
         .then((builds)=> {
