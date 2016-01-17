@@ -7,7 +7,7 @@ import {
   help,
 } from 'controllers/';
 
-import { startHttpd } from 'lib/utils.js';
+import { startHttpd } from 'lib/httpd.js';
 
 export function run() {
   // To avoid heroku timeout
