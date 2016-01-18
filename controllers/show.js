@@ -18,6 +18,7 @@ export function show(bot, msg) {
           bot.reply(msg, `${normalizeBuilds(builds).join('\n\n')}`);
         });
     })
+    .then(ci.cleanConv.bind(ci))
     .catch((err)=> {
       bot.reply(msg, ci.errorMessage);
       console.log(err);
