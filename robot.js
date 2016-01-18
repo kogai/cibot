@@ -1,4 +1,4 @@
-import Botkit from 'botkit';
+import { slackbot } from 'botkit';
 
 import {
   rebuild,
@@ -15,7 +15,7 @@ export function run() {
   startHttpd();
 
   // Initialize
-  const controller = Botkit.slackbot({
+  const controller = slackbot({
     debug: process.env.NODE_ENV === 'debug',
   });
 
