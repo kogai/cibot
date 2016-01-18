@@ -1,6 +1,6 @@
 {
   "name": "@kogai/cibot",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "会話形式でCicleCIにコマンドできるSlackBot",
   "main": "robot.js",
   "scripts": {
