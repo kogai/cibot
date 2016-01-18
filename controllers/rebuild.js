@@ -26,6 +26,7 @@ export function rebuild(bot, msg) {
         bot.reply(msg, `:hammer_and_wrench: Start rebuilding \`${buildDetail}\` ...`);
       });
     })
+    .then(ci.cleanConv.bind(ci))
     .catch((err)=> {
       bot.reply(msg, ci.errorMessage);
       console.log(err);

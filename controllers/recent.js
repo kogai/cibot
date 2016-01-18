@@ -9,5 +9,6 @@ export function recent(bot, msg) {
   ci.getRecentBuilds(limit)
     .then((builds)=> {
       bot.reply(msg, `${normalizeBuilds(builds).join('\n\n')}`);
-    });
+    })
+    .then(ci.cleanConv.bind(ci));
 }
