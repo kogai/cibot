@@ -17,8 +17,8 @@ export function inspect(bot, msg) {
       });
     })
     .then((build)=> {
-      const messages = build.steps.map((b, i)=> normalizeStep(i, b)).join('\n');
-      bot.reply(msg, messages);
+      const messages = build.steps.map((b, i)=> normalizeStep(i, b));
+      bot.reply(msg, messages.join('\n'));
     })
     .then(ci.cleanConv.bind(ci));
 }
